@@ -21,7 +21,7 @@ namespace MvcMusic.Models
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z]\S*$")]
         [Required]
         [StringLength(30)]
         public string Genre { get; set; }
@@ -30,5 +30,8 @@ namespace MvcMusic.Models
         [StringLength(5)]
         [Required]
         public string Rating { get; set; }
+
+        [Display(Name = "Verify")]
+        public bool Verify { get; set; }
     }
 }
